@@ -6,8 +6,21 @@ using System.Threading.Tasks;
 
 namespace Lesson6
 {
+    [CustomNameAttribute("CustomFieldName")]
+    public class CustomNameAttribute : Attribute
+    {
+        public string CustomName;
+
+
+        public CustomNameAttribute(string v)
+        {
+            CustomName = v;
+        }
+    }
+
     class TestClass
     {
+        [CustomNameAttribute("CustomFieldName")]
         public int I { get; set; }
         public string? S { get; set; }
         public decimal D { get; set; }
